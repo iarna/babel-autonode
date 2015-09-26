@@ -16,6 +16,16 @@ And in a new project:
 babel-autonode-init
 ```
 
+### THE BIG ASSUMPTION
+
+WARNING WARNING WARNING
+
+We only make one big assumption and that's that you keep your project js
+files in `src/`.  Now, I don't ordinarily do that, but it makes the
+integration work this module has to do MUCH easier.  I would _love_ a patch
+that made it not care, but I'm probably not going to be motivated to write
+it myself.
+
 ### Installing by hand:
 
 The above is the equivalent of:
