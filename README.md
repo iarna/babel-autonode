@@ -26,6 +26,11 @@ integration work this module has to do MUCH easier.  I would _love_ a patch
 that made it not care, but I'm probably not going to be motivated to write
 it myself.
 
+### FRONTEND
+
+The way the loader works is node specific and not appropriate for the
+frontend.  I would be open to patches to make this more frontend friendly.
+
 ### Installing by hand:
 
 The above is the equivalent of:
