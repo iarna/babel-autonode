@@ -51,17 +51,17 @@ fs.statAsync('package.json').catch(function (e) {
   return ! file.dest.info || file.dest.info.mtime < file.src.info.mtime
 }).each(function (file) {
   return mkdirp(path.dirname(file.dest.name)).then(function () {
-    console.log("generating", file.dest.name)
-    return execFile('babel', [
-      '--babelrc', require.resolve('babelrc-v8/babelrcs/'+babelrcs[file.ver]),
-      file.src.name, '-o', file.dest.name 
-    ]).catch(function (er) {
+    var args = ['--babelrc', path.relative(
+        process.cwd(), require.resolve('babelrc-v8/babelrcs/'+babelrcs[file.ver])),
+      file.src.name, '-o', file.dest.name]
+    console.log("> babel", args.join(' ', args))
+    return execFile('babel', args, {stdio: 'inherit'}).catch(function (er) {
       console.error("Error running babel: " + er.message)
       process.exit(1)
     })
   })
-}).then(function () {
-  console.log('done!')
+}).then(function (files) {
+  if (files.length) console.log('> build complete')
 })
 
 function getFiles (top, subdir) {
