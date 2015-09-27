@@ -1,6 +1,5 @@
 'use strict'
-var fs = require('fs')
-var packageJson = JSON.parse(fs.readFileSync('package.json'))
+var packageJson = module.parent.require('./package.json')
 var babelrcs = require('babelrc-v8')
 var versions = Object.keys(babelrcs).map(function (ver) { return ver.split('.') })
 var v8version = process.versions.v8.split('.')
