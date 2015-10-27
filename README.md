@@ -40,9 +40,9 @@ npm install --save-dev babel babel-autonode
 and then adding this to your `package.json` file:
 ```
 "scripts": {
-  "build": "babel-autonode",
-  "prestart": "npm run build",
-  "prepublish": "npm run build"
+  "transpile": "babel-autonode",
+  "prestart": "npm run transpile",
+  "prepublish": "npm run transpile"
 },
 ```
 
@@ -63,7 +63,7 @@ Any time you run `npm install` (with no arguments), `npm pack` or `npm
 publish` then `babel-autonode` will be called to refresh your compiles.
 Don't worry though, it should be _very_ fast if nothing has changed.
 
-If you want to manually do a build, run `npm
+If you want to manually do a build, run `npm run transpile`.
 
 ### babel-autonode
 
