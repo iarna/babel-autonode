@@ -36,6 +36,7 @@ frontend.  I would be open to patches to make this more frontend friendly.
 The above is the equivalent of:
 ```
 npm install --save-dev babel babel-autonode
+npm install --save babel-autonode-loader
 ```
 and then adding this to your `package.json` file:
 ```
@@ -50,7 +51,7 @@ And the final bit it does is a little more complicated.  It creates a file
 named `loader.js`, which is just:
 
 ```
-module.exports = require('babel-autonode/loader.js')
+module.exports = require('babel-autonode-loader')
 ```
 
 And then it patches your `package.json` copying the `main` field (the entry
