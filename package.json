@@ -7,12 +7,16 @@
     "babel-autonode": "babel-autonode.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "transpile": "node babel-autonode",
+    "prepublish": "npm run transpile",
+    "prestart": "npm run transpile"
   },
   "keywords": [],
   "author": "Rebecca Turner <me@re-becca.org> (http://re-becca.org/)",
   "license": "ISC",
   "dependencies": {
+    "babel": "^5.8.29",
     "babelrc-v8": "^2.0.0",
     "bluebird": "^2.10.1",
     "mkdirp": "^0.5.1"
