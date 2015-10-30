@@ -17,8 +17,8 @@
   "license": "ISC",
   "dependencies": {
     "babel": "^5.8.29",
-    "babelrc-v8": "^2.0.0",
-    "bluebird": "^2.10.1",
+    "babelrc-v8": "^2.1.0",
+    "bluebird": "^3.0.2",
     "mkdirp": "^0.5.1"
   },
   "repository": {
