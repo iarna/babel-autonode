@@ -16,7 +16,11 @@ versions.sort(cmpVerStr)
 
 for (var ii=0; ii < versions.length; ++ii) {
   if (cmpVerStr(v8version, versions[ii]) <= 0) {
-    require('./v8/' + versions[ii].join('.') + '/babel-autonode.js')
-    break
+    try {
+      require('./v8/' + versions[ii].join('.') + '/babel-autonode.js')
+      break
+    } catch (ex) {
+      console.error(ex)
+    }
   }
 }
